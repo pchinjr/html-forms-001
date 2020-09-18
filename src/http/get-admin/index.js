@@ -7,11 +7,11 @@ async function http(req) {
   if (req.session.account) {
     let results = await drafts.read()
     return {
-      html: admin(results)
+      body: admin(results)
     }
   }
   return {
-    html: signin()
+    body: signin()
   }
 }
 
