@@ -7,7 +7,7 @@ async function http(req) {
   if (req.session.account) {
     let results = await drafts.read()
     return {
-      statusCode: 303,
+      statusCode: 200,
       headers: {
         "Content-Type":"text/html; charset=UTF-8"
       },
@@ -15,7 +15,7 @@ async function http(req) {
     }
   }
   return {
-    statusCode: 303,
+    statusCode: 200,
       headers: {
         "Content-Type":"text/html; charset=UTF-8"
       },

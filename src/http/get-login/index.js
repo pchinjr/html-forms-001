@@ -7,12 +7,17 @@ async function login(req) {
     return {
       statusCode: 303,
       session: {account},
-      location: '/admin'
+      headers: {
+        location: '/admin'
+      }
     }
   }
   else {
     return {
-      location: '/admin/?authorized=false'
+      statusCode: 401,
+      headers: {
+        location: '/admin/?authorized=false'
+      }
     }
   }
 }
