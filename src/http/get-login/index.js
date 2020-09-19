@@ -5,6 +5,7 @@ async function login(req) {
   if (req.query.code) {
     let account = await github(req)
     return {
+      statusCode: 303,
       session: {account},
       location: '/admin'
     }
