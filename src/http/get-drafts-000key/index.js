@@ -12,6 +12,7 @@ async function http(req) {
     }
   }
   return {
+    statusCode: 303,
     location: '/admin'
   }
 }
