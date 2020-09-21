@@ -24,7 +24,11 @@ async function http(req) {
   }
   catch(e) {
     return {
-      html: `${e.message} <pre>${e.stack}`
+      statusCode: 303,
+      headers: {
+        "Content-Type": "text/html; charset=utf-8"
+      },
+      body: `${e.message} <pre>${e.stack}`
     }
   }
 }

@@ -33,7 +33,11 @@ async function publish(req) {
   }
   catch(e) {
     return {
-      html: `
+      status: 400,
+      headers: {
+        "Content-Type": "text/html; charset=utf-8"
+      },
+      body: `
         <h3>${e.message}</h3>
         <pre>${e.stack}</pre>
       `
